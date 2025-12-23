@@ -133,10 +133,7 @@
       // 1. Vandiep
       // ==========================================
       const MUSIC_URL = "../audio.mp3";
-      let bgMusic = new Audio(MUSIC_URL);
-      console.log(bgMusic);
-      bgMusic.loop = true;
-      bgMusic.volume = 1.0;
+      let bgMusic = null;
 
       const loader = new THREE.TextureLoader();
       const photoFiles = [
@@ -518,6 +515,9 @@
       // 4. Vandiep
       // ==========================================
       function startSystem() {
+        bgMusic = new Audio(MUSIC_URL);
+        bgMusic.loop = true;
+        bgMusic.volume = 1.0;
         document.getElementById("btnStart").style.display = "none";
         bgMusic.play().catch((e) => console.log(e));
         init3D();
